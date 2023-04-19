@@ -1,6 +1,6 @@
 {
-    "id": "io.supernova.css",
-    "name": "CSS",
+    "id": "co.stevelim.dev",
+    "name": "CSS-variables",
     "description": "CSS token and style exporter",
     "author": "Ivan Terpugov & Jiri Trecak",
     "organization": "Supernova",
