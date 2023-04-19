@@ -35,6 +35,29 @@
   }
 );
 
+/**
+ * Convert group name, token name and possible prefix into kebab-cased string
+ */
+Pulsar.registerFunction(
+  "readableVariableKebabName",
+  function (token) {
+    let name = token.name;
+
+    // lowercase string
+     name = name
+      .toLowerCase();
+    
+    // only allow letters, digits, underscore and hyphen
+    name = name.replace(/[^a-zA-Z0-9_-]/g, '_')
+
+    // prepend underscore if it starts with digit 
+    if (/^\d/.test(name)) {
+      name = '_' + name;
+    }
+
+    return name;
+  }
+);
 
 function findAliases(token, allTokens){
   let aliases = allTokens.filter(t => t.value.referencedToken && t.value.referencedToken.id === token.id)
